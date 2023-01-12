@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WoodDark
+  m_Shader: {fileID: 4800000, guid: 589ea0397284e0e42b1985a0455d66b2, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _NORMALMAP
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurMap:
+        m_Texture: {fileID: 2800000, guid: c22fc16178bfeb94cb1b5985380c4287, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 376acec26d7e74a40b4b2bda2b456a37, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutout: 0.172
+    - _AlphaTestToggle: 0
+    - _CelTreshold: 2
+    - _Cull: 2
+    - _Cutoff: 0
+    - _EmissionPower: 0
+    - _EmissionToggle: 0
+    - _FresnelPower: 4
+    - _FresnelToggle: 0
+    - _FurScale: 1.2
+    - _Metallic: 0
+    - _NormalMapToggle: 1
+    - _NormalScale: 0.2
+    - _NormalStrength: 1
+    - _Occlusion: 0.4
+    - _OutlineThickness: 0.006
+    - _RimLightIntensity: 0.82
+    - _RimLightPower: 6
+    - _ShadowDepthTreshold: 0.25
+    - _ShadowExtraBias: -0.3
+    - _ShellAmount: 6
+    - _ShellStep: 0.004
+    - _Smoothness: 0
+    - _SpecPower: 10
+    - _SpecularToggle: 0
+    m_Colors:
+    - _AmbientColor: {r: 0.21568628, g: 0.011764708, b: 0.054664675, a: 1}
+    - _BaseColor: {r: 0.4716981, g: 0.34907654, b: 0.28702384, a: 1}
+    - _BaseMove: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 1, b: 0.15156436, a: 1}
+    - _FresnelColor: {r: 1, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 1, g: 0.77033573, b: 0.6933962, a: 1}
+    - _WindFreq: {r: 0, g: 0, b: 0, a: 1}
+    - _WindMove: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Patch
+  m_EditorClassIdentifier: 
+  m_GroupName: Patch
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b5b091b1a2c08844b9b045a7ddcf0d2f
+  m_SerializeEntries:
+  - m_GUID: 1e3185b63480a1a4081e2167355e763a
+    m_Address: character_knight
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 18e4c21758c353044a62e1f4ea6eb718
+    m_Address: character_mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 82f25d672bc8a02429d06fe7300cfa66
+    m_Address: character_rogue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 6d92b57c3ac7f4749966a4bbdc05dfe4
+    m_Address: KayKit Animated Character_v1.2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 73aa2832cc5973d4e87b576c81930ff1
+    m_Address: character_barbarian
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: aad4cc13d67a6964882f7d7776a97b9a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 96e549d41f6eb354e8bd4b9858dd65af, type: 2}
+    - {fileID: 11400000, guid: f837bc56884c7924ab749478369ce1f6, type: 2}
