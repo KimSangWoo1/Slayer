@@ -9,7 +9,7 @@ public class ContentsManager : MonoSingleton<ContentsManager>
 
     public void SetContent(Content content)
     {
-        ContentsDic[content.Key] = content;
+        ContentsDic[content.ContentType.ToKeyString()] = content;
     }
 
     public Content GetContent(string key)

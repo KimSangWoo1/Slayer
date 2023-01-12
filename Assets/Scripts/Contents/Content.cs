@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class Content
 {
-    public string Key;
     public eContentType ContentType;
     public eContentOpenType ContentOpenType;
     public eContentGuide ContentGuide;
@@ -23,12 +22,15 @@ public class Content
     public int MaxGuideProgress;
     [HideInInspector]
     public int CurrentGuideProgress;
+    [HideInInspector]
+    public string BanInfo;
+    [HideInInspector]
+    public string BanNotice;
 
     public Content() { }
 
-    public Content(string key, eContentType contentType, eContentOpenType contentOpenType, eContentGuide contentGuide, int openLevel, int openQuestID, int maxProgress, int currentProgress, bool isGuide, int maxGuideProgress, int currentGuideProgress)
+    public Content(eContentType contentType, eContentOpenType contentOpenType, eContentGuide contentGuide, int openLevel, int openQuestID, int maxProgress, int currentProgress, bool isGuide, int maxGuideProgress, int currentGuideProgress)
     {
-        this.Key = key;
         this.ContentType = contentType;
         this.ContentOpenType = contentOpenType;
         this.ContentGuide = contentGuide;

@@ -33,9 +33,9 @@ public class ContentSetter : MonoBehaviour
 
     private void SettingContent()
     {
-        if (!string.IsNullOrWhiteSpace(m_content.Key))
+        if (!string.IsNullOrWhiteSpace(m_content.ContentType.ToKeyString()))
         {
-            Content content = ContentsManager.Instance.GetContent(m_content.Key);
+            Content content = ContentsManager.Instance.GetContent(m_content.ContentType.ToKeyString());
             CheckContentGuide(content);
             CheckContentOpen(content);
             m_content = content;
