@@ -1,14 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ContentBaseUI : MonoBehaviour
+[RequireComponent(typeof(ContentSetter))]
+public abstract class ContentBaseUI : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField]
-    private bool m_isShow;
+    protected Text m_nameTxt;
+    [SerializeField]
+    protected Button m_btn;
 
     [SerializeField]
-    private bool m_isLock;
+    protected Text m_banTxt;
+    [SerializeField]
+    protected Image m_lockImg;
+
+    [Header("Option")]
+    [SerializeField]
+    protected bool m_isShow;
+    [SerializeField]
+    protected bool m_isLock;
+
+    // Event
+    protected delegate void OpenComplete();
 
     #region Get Set Properties
     public bool IsShow
@@ -24,4 +40,11 @@ public class ContentBaseUI : MonoBehaviour
     }
     #endregion
 
+    public abstract void Initialize();
+
+    public abstract void Set<T>(T t) where T : Content;
+
+    protected abstract void Release();
+
+    protected abstract void OnClick();
 }

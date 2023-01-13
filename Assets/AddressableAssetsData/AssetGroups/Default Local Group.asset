@@ -141,6 +141,18 @@ MonoBehaviour:
     m_Address: BlueLight
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 9bd79d53e17214147aeb54509d0583ad
+    m_Address: Assets/AdressableBundle/Data/Contents.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5d5b4201df491df4ab668fc4ffa11e08
+    m_Address: Assets/AdressableBundle/Data/Guide.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 102a2ba34c8dda048a332cf75e626a8c
+    m_Address: Assets/AdressableBundle/Data/SubContent.json
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: aad4cc13d67a6964882f7d7776a97b9a, type: 2}
   m_SchemaSet:

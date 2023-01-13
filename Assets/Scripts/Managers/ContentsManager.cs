@@ -22,13 +22,7 @@ public class ContentsManager : MonoSingleton<ContentsManager>
     }
 }
 
-public enum eContentGuide
-{
-    NONE = 0,
-    YET,
-    START,
-    END
-}
+
 
 public enum eContentOpenType
 {
@@ -43,13 +37,7 @@ public enum eContentType
 {
     NONE = 0,
 
-    //Lobby
-    SHOP,
-    INVENTORY,
-    CARD,
-    STAGE,
-    BATTLE,
-    SEASONPASS,
-    MAIL,
-    CHEST
+    MAIN,
+    SUB,
+    SPECIAL
 }

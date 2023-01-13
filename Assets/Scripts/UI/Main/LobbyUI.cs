@@ -74,6 +74,11 @@ public class LobbyUI : MainBaseUI
 
 
     #region Mono
+
+    private void Start()
+    {
+        FileManager.LoadData();
+    }
     void Update()
     {
         

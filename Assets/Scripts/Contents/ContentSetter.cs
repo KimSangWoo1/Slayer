@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(ContentUI))]
 public class ContentSetter : MonoBehaviour
 {
     [SerializeField]
@@ -21,13 +20,15 @@ public class ContentSetter : MonoBehaviour
                 return;
             }
         }
+        m_reference.Initialize();
     }
 
     private void OnEnable()
     {
         if (m_reference != null)
         {
-            SettingContent();
+            //SettingContent();
+            m_reference.Set(m_content);
         }
     }
 
@@ -36,7 +37,8 @@ public class ContentSetter : MonoBehaviour
         if (!string.IsNullOrWhiteSpace(m_content.ContentType.ToKeyString()))
         {
             Content content = ContentsManager.Instance.GetContent(m_content.ContentType.ToKeyString());
-            CheckContentGuide(content);
+            
+            CheckContentGuide(content.ContentType);
             CheckContentOpen(content);
             m_content = content;
         }
@@ -69,21 +71,22 @@ public class ContentSetter : MonoBehaviour
         }
     }
 
-    private void CheckContentGuide(Content content)
+    private void CheckContentGuide(eContentType contentType)
     {
-        switch (content.ContentGuide)
+        eGuideStep guideStep = GuideManager.Instance.CheckGuide(contentType);
+        switch (guideStep)
         {
-            case eContentGuide.NONE:
+            case eGuideStep.NONE:
                 m_reference.IsLock = false;
                 break;
-            case eContentGuide.YET:
+            case eGuideStep.YET:
                 m_reference.IsLock = true;
                 break;
-            case eContentGuide.START:
+            case eGuideStep.START:
                 m_reference.IsLock = false;
-                GuideManager.Instance.OnGuide(content.ContentType, content.MaxGuideProgress, content.CurrentGuideProgress);
+                GuideManager.Instance.OnGuide(contentType);
                 break;
-            case eContentGuide.END:
+            case eGuideStep.END:
                 m_reference.IsLock = false;
                 break;
         }

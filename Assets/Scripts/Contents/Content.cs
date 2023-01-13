@@ -5,23 +5,17 @@ using UnityEngine;
 [System.Serializable]
 public class Content
 {
+    [HideInInspector]
+    public int MetaID;
     public eContentType ContentType;
     public eContentOpenType ContentOpenType;
-    public eContentGuide ContentGuide;
+    [HideInInspector]
+    public string Name;
     [HideInInspector]
     public int OpenLevel;
     [HideInInspector]
     public int OpenQuestID;
-    [HideInInspector]
-    public int MaxProgress;
-    [HideInInspector]
-    public int CurrentProgress;
-    [HideInInspector]
-    public bool IsGuide;
-    [HideInInspector]
-    public int MaxGuideProgress;
-    [HideInInspector]
-    public int CurrentGuideProgress;
+
     [HideInInspector]
     public string BanInfo;
     [HideInInspector]
@@ -29,17 +23,14 @@ public class Content
 
     public Content() { }
 
-    public Content(eContentType contentType, eContentOpenType contentOpenType, eContentGuide contentGuide, int openLevel, int openQuestID, int maxProgress, int currentProgress, bool isGuide, int maxGuideProgress, int currentGuideProgress)
+    public Content(eContentType contentType, eContentOpenType contentOpenType, string name, int openLevel, int openQuestID, string banInfo, string banNotice)
     {
         this.ContentType = contentType;
         this.ContentOpenType = contentOpenType;
-        this.ContentGuide = contentGuide;
+        this.Name = name;
         this.OpenLevel = openLevel;
         this.OpenQuestID = openQuestID;
-        this.MaxProgress = maxProgress;
-        this.CurrentProgress = currentProgress;
-        this.IsGuide = isGuide;
-        this.MaxGuideProgress = maxGuideProgress;
-        this.CurrentGuideProgress = currentGuideProgress;
+        this.BanInfo = banInfo;
+        this.BanNotice = banNotice;
     }
 }
