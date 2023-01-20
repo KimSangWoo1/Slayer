@@ -26,6 +26,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
 
     private void Awake()
     {
+        _instance = gameObject.GetComponent<T>();
         DontDestroyOnLoad(this);
         Debug.Log($"Singleton Manager : { typeof(T).Name}");
     }

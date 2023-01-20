@@ -32,8 +32,8 @@ public int CurrentGuideProgress;
 
 public enum eGuideStep
 {
-    NONE = 0,
-    YET,
-    START,
-    END
+    None = 0,
+    Yet,
+    Start,
+    End
 }

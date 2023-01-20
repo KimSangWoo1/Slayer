@@ -140,19 +140,48 @@ MonoBehaviour:
   - m_GUID: 5a465a775c9862d49b8ac01afc477e41
     m_Address: BlueLight
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Material
   - m_GUID: 9bd79d53e17214147aeb54509d0583ad
-    m_Address: Assets/AdressableBundle/Data/Contents.json
+    m_Address: MainContent
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Data
   - m_GUID: 5d5b4201df491df4ab668fc4ffa11e08
-    m_Address: Assets/AdressableBundle/Data/Guide.json
+    m_Address: Guide
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Data
   - m_GUID: 102a2ba34c8dda048a332cf75e626a8c
-    m_Address: Assets/AdressableBundle/Data/SubContent.json
+    m_Address: SubContent
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Data
+  - m_GUID: 1e3185b63480a1a4081e2167355e763a
+    m_Address: character_knight
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 18e4c21758c353044a62e1f4ea6eb718
+    m_Address: character_mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 82f25d672bc8a02429d06fe7300cfa66
+    m_Address: character_rogue
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 6d92b57c3ac7f4749966a4bbdc05dfe4
+    m_Address: KayKit Animated Character_v1.2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 73aa2832cc5973d4e87b576c81930ff1
+    m_Address: character_barbarian
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: aad4cc13d67a6964882f7d7776a97b9a, type: 2}
   m_SchemaSet:

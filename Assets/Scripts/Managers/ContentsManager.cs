@@ -4,21 +4,67 @@ using UnityEngine;
 
 public class ContentsManager : MonoSingleton<ContentsManager>
 {
-    public Dictionary<string, Content> ContentsDic = new Dictionary<string, Content>();
-    public List<Content> ContentOpenList = new List<Content>();
+    public Dictionary<MainContent.eMainContentType, MainContent> mainContentsDic = new Dictionary<MainContent.eMainContentType, MainContent>();
 
-    public void SetContent(Content content)
+    #region 
+    public void SetMainContent(MainContent mainContent)
     {
-        ContentsDic[content.ContentType.ToKeyString()] = content;
+        mainContentsDic[mainContent.MainContentType] = mainContent;
     }
 
-    public Content GetContent(string key)
+    public T GetContent<T>(eContentType contentType) where T : Content, new()
     {
-        if (!ContentsDic.ContainsKey(key))
+        T content = new T();
+        switch (contentType)
         {
-            return ContentsDic[key];
+            case eContentType.Main:
+                content = null;//GetMainContent() as T;
+                break;
+            case eContentType.Sub:
+                content = GetSubContent() as T;
+                break;
+            case eContentType.Special:
+                content = GetSpecialContent() as T;
+                break;
         }
-        return new Content();
+        return content ;
+    }
+
+    private MainContent GetMainContent(MainContent.eMainContentType mainContentType)
+    {
+        if (!mainContentsDic.ContainsKey(mainContentType))
+        {
+            return mainContentsDic[mainContentType];
+        }
+        return new MainContent();
+    }
+
+    private SubContent GetSubContent()
+    {
+        return new SubContent();
+    }
+
+    private SpecialContent GetSpecialContent()
+    {
+        return new SpecialContent();
+    }
+    #endregion
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        MainContentsJData datas = DataManager.Instance.GetData<MainContentsJData>(eGameDataType.MainContent);
+        datas.Init();
+        if (datas != null && datas.dataList.Count > 0)
+        {
+            for (int i = 0; i < datas.dataList.Count; i++)
+            {
+                MainContent mainContent = datas.dataList[i] as MainContent;
+                mainContentsDic[mainContent.MainContentType] = mainContent;
+            }
+        }
+        datas.Release();
     }
 }
 
@@ -26,18 +72,18 @@ public class ContentsManager : MonoSingleton<ContentsManager>
 
 public enum eContentOpenType
 {
-    NONE = 0,
-    ALLWAYS,
-    LEVEL,
-    QUEST,
-    DEVELOPING
+    None = 0,
+    Allways,
+    Level,
+    Quest,
+    Developing
 }
 
 public enum eContentType
 {
-    NONE = 0,
+    None = 0,
 
-    MAIN,
-    SUB,
-    SPECIAL
+    Main,
+    Sub,
+    Special
 }

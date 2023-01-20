@@ -1,18 +1,16 @@
 #if UNITY_EDITOR
-using UnityEngine;
-using UnityEditor;
-
-using System;
-using System.Text;
-using System.IO;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Concurrent;
-using System.Linq;
-using System.Globalization;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.Collections;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Text;
+using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(TextAsset), true)]
 public class JsonEditorExtention : Editor
@@ -1038,8 +1036,6 @@ public class JsonEditorExtention : Editor
         return uniqueName;
     }
 }
-#endif
-
 
 public static class ExtensionMetod
 {
@@ -1057,3 +1053,5 @@ public static class ExtensionMetod
         return sb.ToString();
     }
 }
+
+#endif

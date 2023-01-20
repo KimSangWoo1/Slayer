@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Content
+public class Content : GameData
 {
     [HideInInspector]
     public int MetaID;
     public eContentType ContentType;
     public eContentOpenType ContentOpenType;
+    public MainContent.eMainContentType MainContentType;
     [HideInInspector]
     public string Name;
     [HideInInspector]
@@ -17,20 +19,22 @@ public class Content
     public int OpenQuestID;
 
     [HideInInspector]
-    public string BanInfo;
+    public string LockText;
     [HideInInspector]
-    public string BanNotice;
+    public string LockNotice;
 
     public Content() { }
 
-    public Content(eContentType contentType, eContentOpenType contentOpenType, string name, int openLevel, int openQuestID, string banInfo, string banNotice)
+    public Content(int metaID, eContentType contentType, eContentOpenType contentOpenType, MainContent.eMainContentType mainContentType, string name, int openLevel, int openQuestID, string lockText, string lockNotice)
     {
+        this.MetaID = metaID;
         this.ContentType = contentType;
         this.ContentOpenType = contentOpenType;
+        this.MainContentType = mainContentType;
         this.Name = name;
         this.OpenLevel = openLevel;
         this.OpenQuestID = openQuestID;
-        this.BanInfo = banInfo;
-        this.BanNotice = banNotice;
+        this.LockText = lockText;
+        this.LockNotice = lockNotice;
     }
 }

@@ -1,0 +1,24 @@
+{
+  "Shop": {
+    "MetaID": 1,
+    "ContentType": "Main",
+    "ContentOpenType": "Allways",
+    "MainContentType": "Shop",
+    "Name": "Shop",
+    "OpenLevel": 0,
+    "OpenQuestID": 0,
+    "LockText": "",
+    "LockNotice": ""
+  },
+  "Inventory": {
+    "MetaID": 2,
+    "ContentType": "Main",
+    "ContentOpenType": "Allways",
+    "MainContentType": "Inventory",
+    "Name": "Inventory",
+    "OpenLevel": 0,
+    "OpenQuestID": 0,
+    "LockText": "",
+    "LockNotice": ""
+  }
+}

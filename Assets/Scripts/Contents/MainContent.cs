@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class MainContent : Content
 {
-    public eContentMainType ContentMainType;
-}
+    
+    public enum eMainContentType
+    {
+        None = 0,
 
-public enum eContentMainType
-{
-    NONE = 0,
-
-    //Lobby
-    SHOP,
-    INVENTORY,
-    CARD,
-    STAGE,
-    BATTLE,
-    SEASONPASS,
-    MAIL,
-    CHEST
+        //Lobby
+        Shop,
+        Inventory,
+        Card,
+        Stage,
+        Battle,
+        SeasonPass,
+        Clan,
+        Chest
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,41 +9,45 @@ public class LobbyUI : MainBaseUI
     #region Inspector
     [Header("UI")]
     [SerializeField]
-    private Button shopBtn;
-    [SerializeField]
-    private Button inventoryBtn;
-    [SerializeField]
-    private Button cardBtn;
-    [SerializeField]
-    private Button settingBtn;
+    private MainContentUI[] mainContentUIs;
+    #endregion
 
-    [SerializeField]
-    private Button stageBtn;
-    [SerializeField]
-    private Button battleBtn;
+    #region Mono
+    private void Awake()
+    {
+        Initialize();
+    }
+    private void Start()
+    {
 
-    [SerializeField]
-    private Button mailBtn;
-    [SerializeField]
-    private Button rewardBtn;
-    [SerializeField]
-    private Button seasonPassBtn;
+    }
+    void Update()
+    {
 
-    [SerializeField]
-    private Button steminaBtn;
-    [SerializeField]
-    private Button moneyBtn;
-    [SerializeField]
-    private Button zamBtn;
+    }
+
     #endregion
 
     #region Override 
     public override void Initialize()
     {
         CheckMileStone();
+        SetDataToContets();
+    }
 
-        shopBtn.onClick.AddListener(OnShopClick);
-        inventoryBtn.onClick.AddListener(OnInventoryClick);
+    private void SetDataToContets()
+    {
+        //AddressableManager.Instance.CheckUpdate();
+        List<string> list = new List<string>();
+        list.Add("MainContent");
+        //action += OnAction;
+        //action = () => DataManager.Instance.LoadGameData<MainContentsJData>("MainContent");
+
+        Debug.Log("AAA");
+        DataManager.Instance.LoadGameData<MainContentsJData>("MainContent").Forget();
+        Debug.Log("BBB");
+        //AddressableManager.Instance.Download(list, action);
+        //FileManager.LoadData();
     }
 
     public override void Destroy()
@@ -70,20 +75,6 @@ public class LobbyUI : MainBaseUI
         base.Back();
 
     }
-    #endregion
-
-
-    #region Mono
-
-    private void Start()
-    {
-        FileManager.LoadData();
-    }
-    void Update()
-    {
-        
-    }
-
     #endregion
 
     #region Button Event

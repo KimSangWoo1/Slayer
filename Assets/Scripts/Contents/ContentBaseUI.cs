@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-[RequireComponent(typeof(ContentSetter))]
 public abstract class ContentBaseUI : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField]
-    protected Text m_nameTxt;
+    protected Image _backImage;
     [SerializeField]
-    protected Button m_btn;
-
+    protected Image _mainImage;
     [SerializeField]
-    protected Text m_banTxt;
+    protected TextMeshProUGUI _nameTxt;
     [SerializeField]
-    protected Image m_lockImg;
+    protected Button _btn;
 
     [Header("Option")]
     [SerializeField]
-    protected bool m_isShow;
+    protected bool _isShow;
     [SerializeField]
-    protected bool m_isLock;
+    protected bool _isLock;
 
     // Event
     protected delegate void OpenComplete();
@@ -29,14 +28,14 @@ public abstract class ContentBaseUI : MonoBehaviour
     #region Get Set Properties
     public bool IsShow
     {
-        get { return m_isShow; }
-        set { m_isShow = value; }
+        get { return _isShow; }
+        set { _isShow = value; }
     }
 
     public bool IsLock
     {
-        get { return m_isLock; }
-        set { m_isLock = value; }
+        get { return _isLock; }
+        set { _isLock = value; }
     }
     #endregion
 

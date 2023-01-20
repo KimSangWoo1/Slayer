@@ -2,8 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MainContentSetter))]
+
 public class MainContentUI : ContentBaseUI
 {
+    [Header ("Badge")]
+    [SerializeField]
+    private NotificationBadge _notificationBadge;
+    [Header("Lock")]
+    [SerializeField]
+    private LockUI _lockUI;
+
+    //Event
     OpenComplete openComplete;
 
     private void Start()
