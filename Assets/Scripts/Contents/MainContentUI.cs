@@ -16,11 +16,6 @@ public class MainContentUI : ContentBaseUI
     //Event
     OpenComplete openComplete;
 
-    private void Start()
-    {
-        
-    }
-
     private void OnDestroy()
     {
         Release();
@@ -30,11 +25,23 @@ public class MainContentUI : ContentBaseUI
     public override void Initialize()
     {
         openComplete += OnClick;
+        _btn.onClick.AddListener(openComplete.Invoke);
     }
 
-    public override void Set<T>(T t)
+    public override void Set<Content>(Content content) 
     {
-        
+        if (_isShow)
+        {
+            MainContent mainContent = content as MainContent;
+            _nameTxt.text = mainContent.Name;
+            _btn.interactable = !IsLock;
+            _lockUI.Set(_isLock, mainContent.LockText, mainContent.LockNotice);
+            _notificationBadge.Initialize();
+        }
+        else
+        {
+            this.gameObject.SetActive(_isShow);
+        }
     }
 
     protected override void OnClick()
@@ -45,6 +52,7 @@ public class MainContentUI : ContentBaseUI
     protected override void Release()
     {
         openComplete -= OnClick;
+        _btn.onClick.RemoveAllListeners();
     }
     #endregion
 

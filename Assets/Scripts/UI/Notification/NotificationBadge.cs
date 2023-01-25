@@ -11,4 +11,14 @@ public class NotificationBadge : MonoBehaviour
     private Image badgeImage;
     [SerializeField]
     private TextMeshProUGUI notifyText;
+
+    public void Initialize()
+    {
+
+    }
+
+    public void Set()
+    {
+
+    }
 }

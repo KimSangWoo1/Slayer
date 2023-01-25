@@ -11,10 +11,9 @@ public class ContentSetter : MonoBehaviour
     {
         if(m_reference == null)
         {
-            m_reference = GetComponent<ContentBaseUI>();
-            if(m_reference == null)
+            if(!TryGetComponent<ContentBaseUI>(out m_reference))
             {
-                Debug.LogWarning($"Not Add ContentBaseUI : {this.gameObject.name}");
+                Debug.LogWarning($"Can't Add to ContentUI : {this.gameObject.name}");
                 return;
             }
         }

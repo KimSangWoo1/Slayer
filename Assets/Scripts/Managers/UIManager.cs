@@ -13,5 +13,16 @@ public class UIManager : MonoSingleton<UIManager>
     {
 
     }
+
+    public void OpenPopUp(ePopUpType popUpType, string noticeText)
+    {
+
+    }
+}
+
+public enum ePopUpType
+{
+    Normal,
+    Notice
 }
 

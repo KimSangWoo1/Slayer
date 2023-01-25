@@ -7,21 +7,21 @@ public class ContentsManager : MonoSingleton<ContentsManager>
     public Dictionary<MainContent.eMainContentType, MainContent> mainContentsDic = new Dictionary<MainContent.eMainContentType, MainContent>();
 
     #region 
-    public void SetMainContent(MainContent mainContent)
+    public void SetMainContent(JData jData)
     {
-        mainContentsDic[mainContent.MainContentType] = mainContent;
+
     }
 
-    public T GetContent<T>(eContentType contentType) where T : Content, new()
+    public T GetContent<T>(eContentType contentType, MainContent.eMainContentType mainContentType) where T : Content, new()
     {
         T content = new T();
         switch (contentType)
         {
             case eContentType.Main:
-                content = null;//GetMainContent() as T;
+                content = GetMainContent(mainContentType) as T;
                 break;
             case eContentType.Sub:
-                content = GetSubContent() as T;
+                content = GetSubContent(mainContentType) as T;
                 break;
             case eContentType.Special:
                 content = GetSpecialContent() as T;
@@ -39,7 +39,7 @@ public class ContentsManager : MonoSingleton<ContentsManager>
         return new MainContent();
     }
 
-    private SubContent GetSubContent()
+    private SubContent GetSubContent(MainContent.eMainContentType mainContentType)
     {
         return new SubContent();
     }
@@ -67,8 +67,6 @@ public class ContentsManager : MonoSingleton<ContentsManager>
         datas.Release();
     }
 }
-
-
 
 public enum eContentOpenType
 {

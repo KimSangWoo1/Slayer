@@ -12,7 +12,7 @@ public class MainContentSetter : ContentSetter
     {
         if (m_reference != null)
         {
-            //SettingContent();
+            SettingContent();
             m_reference.Set(m_content);
         }
     }
@@ -21,7 +21,7 @@ public class MainContentSetter : ContentSetter
     {
         if (m_content.ContentType != eContentType.None)
         {
-            MainContent content = ContentsManager.Instance.GetContent<MainContent>(m_content.ContentType);
+            MainContent content = ContentsManager.Instance.GetContent<MainContent>(m_content.ContentType, m_content.MainContentType);
 
             CheckContentGuide(content.ContentType);
             CheckContentOpen(content);

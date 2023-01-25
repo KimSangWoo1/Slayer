@@ -16,6 +16,17 @@ public partial class DataManager : MonoSingleton<DataManager>
     public async UniTaskVoid LoadGameData<T>(string key) where T : JData
     {
         T jData = await JSonManager.LoadJsonData<T>(key);
+
+        switch (jData.gameDataType)
+        {
+            case eGameDataType.Guide:
+                break;
+            case eGameDataType.MainContent:
+                ContentsManager.Instance.Initialize();
+                break;
+            case eGameDataType.User:
+                break;
+        }
         gameDataDic.Add(jData.gameDataType, jData);
     }
     #endregion
